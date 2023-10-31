@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">StoryAppSubmission</string>
+    <string name="signup">Sign up</string>
+    <string name="login">Log in</string>
+    <string name="title_welcome_page">Welcome to Story</string>
+    <string name="title_signup_page">sign up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="message_login_page">Masukkan dulu datamu ya</string>
+    <string name="title_login_page">log in</string>
+    <string name="name">Nama</string>
+    <string name="message_main_page">Selamat Belajar di Dicoding.</string>
+    <string name="greeting">Halo %1$s,</string>
+    <string name="logout">log out</string>
+    <string name="em_password_min_length">Character must be minimal 8</string>
+    <string name="em_invalid_email">Invalid email</string>
+    <string name="username">username</string>
+    <string name="description">description</string>
+    <string name="date">date</string>
+    <string name="login_description">LOGIN HERE</string>
+    <string name="button_login">Login</string>
+</resources>
