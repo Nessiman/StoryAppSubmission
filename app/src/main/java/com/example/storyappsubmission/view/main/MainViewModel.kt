@@ -38,6 +38,8 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
     fun getStoryDetail(token: String, id: String) = mainRepository.getStoruDetail(token, id)
 
     fun logout(context: Context) {
-        mainRepository.logout(context)
+        viewModelScope.launch {
+            mainRepository.logout(context)
+        }
     }
 }

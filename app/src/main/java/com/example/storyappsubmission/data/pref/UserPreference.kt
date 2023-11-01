@@ -33,7 +33,7 @@ internal class UserPreference (context: Context){
     fun clearUser(context: Context){
         val editor = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE).edit()
         editor.clear()
-        editor.clear()
+        editor.apply()
     }
 
     companion object{
