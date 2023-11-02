@@ -2,6 +2,7 @@ package com.example.storyappsubmission.view.welcome
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -9,12 +10,19 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import androidx.activity.viewModels
+import com.example.storyappsubmission.ViewModelFactory
 import com.example.storyappsubmission.databinding.ActivityWelcomeBinding
 import com.example.storyappsubmission.view.login.LoginActivity
+import com.example.storyappsubmission.view.main.MainActivity
+import com.example.storyappsubmission.view.main.MainViewModel
 import com.example.storyappsubmission.view.register.SignUpActivity
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
+    private val mainViewModel by viewModels<MainViewModel> {
+        ViewModelFactory.getInstance(application)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +32,7 @@ class WelcomeActivity : AppCompatActivity() {
         setupView()
         setupAction()
         playAnimation()
+        isLogin(this)
 
     }
 
@@ -61,6 +70,16 @@ class WelcomeActivity : AppCompatActivity() {
             )
         }
         supportActionBar?.hide()
+    }
+
+    private fun isLogin(context: Context){
+        mainViewModel.getPreference(context).observe(this){token ->
+            if (token?.isEmpty() == false){
+                val mainActivity = Intent(this@WelcomeActivity, MainActivity::class.java)
+                startActivity(mainActivity)
+                finish()
+            }
+        }
     }
 
     private fun setupAction() {
