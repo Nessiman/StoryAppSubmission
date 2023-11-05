@@ -62,15 +62,7 @@ class MainActivity : AppCompatActivity() {
         return mainViewModel.getPreference(this).value
     }
 
-//    fun setupViewModel(){
-//        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-//        mainViewModel.isLogin().observe(this){
-//            if (!it){
-//                startActivity(Intent(this, WelcomeActivity::class.java))
-//                finish()
-//            }
-//        }
-//    }
+
 
     private fun setupView() {
         @Suppress("DEPRECATION")
@@ -108,9 +100,4 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-//    private fun setupAction() {
-//        binding.logoutButton.setOnClickListener {
-//            viewModel.logout()
-//        }
-//    }
 }
