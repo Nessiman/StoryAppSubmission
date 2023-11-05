@@ -19,4 +19,12 @@
     <string name="date">date</string>
     <string name="login_description">LOGIN HERE</string>
     <string name="button_login">Login</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satellite</string>
+    <string name="terrain_type">Terrain</string>
+    <string name="hybrid_type">Hybrid</string>
+    <string name="story_from">Story from : </string>
+    <string name="retry">Retry</string>
+    <string name="created_at">Created At:</string>
 </resources>

@@ -5,9 +5,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
 import com.example.storyappsubmission.view.MainRepository
 import com.example.storyappsubmission.view.Result
 import com.example.storyappsubmission.view.register.data.RegisterResponse
+import com.example.storyappsubmission.view.story.ListStoryItem
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
@@ -33,7 +36,13 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
         return token
     }
 
-    fun getAllStories(token: String) = mainRepository.getStory(token)
+//    fun getAllStories(context: Context) = LiveData<PagingData<ListStoryItem>>{
+//        return mainRepository.getStory(context).cachedIn(viewModelScope)
+//    }
+
+    fun getAllStories(context: Context): LiveData<PagingData<ListStoryItem>>{
+        return mainRepository.getStory(context).cachedIn(viewModelScope)
+    }
 
     fun getStoryDetail(token: String, id: String) = mainRepository.getStoruDetail(token, id)
 
